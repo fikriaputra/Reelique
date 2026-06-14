@@ -27,3 +27,8 @@ export default function RootLayout({
     </html>
   );
 }
+
+export const metadata = {
+  title: "ReeLique",
+  description: "Movie Discovery Platform",
+};
