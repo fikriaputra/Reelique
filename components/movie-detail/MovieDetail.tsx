@@ -1,7 +1,11 @@
+"use client";
+
 import Image from "next/image";
 import MovieInfo from "./MovieInfo";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import { useRouter } from "next/navigation";
+
 
 interface MovieDetailProps {
   movie: any;
@@ -14,6 +18,9 @@ export default function MovieDetail({
   cast,
   trailerKey,
 }: MovieDetailProps) {
+
+  const router = useRouter();
+  
   return (
     <section
       id="movie-detail"
@@ -51,8 +58,8 @@ export default function MovieDetail({
         "
       >
         {/* Back Button */}
-        <Link
-          href="/"
+        <button
+          onClick={() => router.back()}
           className="
             mb-6
             mt-2
@@ -85,7 +92,7 @@ export default function MovieDetail({
         >
           <ArrowLeft size={16} />
           Back
-        </Link>
+        </button>
 
         {/* Content */}
         <div
